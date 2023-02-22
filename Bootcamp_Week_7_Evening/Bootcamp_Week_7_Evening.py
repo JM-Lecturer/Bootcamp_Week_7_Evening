@@ -1,6 +1,3 @@
-from pickle import TRUE
-
-
 class Vehicle:
     colour = ""
     wheelsCount = 0
@@ -34,7 +31,27 @@ def DisplayVehicles(Vehicles, stock):
         print("")
 
 def PurchaseVehicles(Vehicles):
-    DisplayVehicles(Vehicles, True)
+    
+    loop = True
+    while loop == True:
+
+        DisplayVehicles(Vehicles, True)
+
+        MenuItems = list() 
+        MenuItems.append("Which vehicle would you like to buy:")
+
+        for i in range(0, len(Vehicles)):
+            MenuItems.append(Vehicles[i].name)
+
+        MenuItems.append("Exit")
+
+        choice = RunMenu(MenuItems)
+
+        if choice == len(MenuItems) - 1:
+            loop = False
+            print("\n\n")
+
+#-------------------------------------------------------------------------------------------------------
 
 MenuItems = list()
 MenuItems.append("----------Menu----------\n")
