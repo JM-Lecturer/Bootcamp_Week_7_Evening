@@ -23,7 +23,7 @@ def DisplayVehicles(Vehicles):
     print("----------Vehicles----------\n")
 
     for i in range(0, len(Vehicles)):
-        print("Vehicle " + str(i + 1) + "\n Name: " + Vehicles[i].name)
+        print("Vehicle " + str(i + 1) + "\n Name: " + Vehicles[i].name + "\n Colour: " + Vehicles[i].colour + "\n Wheels: " + str(Vehicles[i].wheelsCount) + "\n Max Speed: " + str(Vehicles[i].maxSpeed) + "\n")
 
 
 MenuItems = list()
