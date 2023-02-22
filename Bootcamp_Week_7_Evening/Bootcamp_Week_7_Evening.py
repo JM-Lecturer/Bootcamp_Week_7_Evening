@@ -1,14 +1,14 @@
-class Vehicles:
+class Vehicle:
     colour = ""
     wheelsCount = 0
     maxSpeed = 0
     name = ""
 
-    def __init__(self):
-        self.colour = "Red"
-        self.wheelsCount = 2
-        self.maxSpeed = 10
-        self.name = "Bicycle"
+    def __init__(self, colour, wheelCount, maxSpeed, name):
+        self.colour = colour
+        self.wheelsCount = wheelCount
+        self.maxSpeed = maxSpeed
+        self.name = name
 
 def RunMenu(MenuItems):
     print(MenuItems[0])
@@ -25,6 +25,13 @@ MenuItems.append("----------Menu----------\n")
 MenuItems.append("View Stock")
 MenuItems.append("Purchase Items")
 MenuItems.append("Exit")
+
+Vehicles = list()
+Vehicles.append(Vehicle("Red", 2, 10, "Bicycle"))
+Vehicles.append(Vehicle("Yellow", 0, 40, "Submarine"))
+Vehicles.append(Vehicle("Black", 4, 70, "Taxi"))
+Vehicles.append(Vehicle("Green", 16, 50, "Tank"))
+Vehicles.append(Vehicle("White", 3, 130, "Airplane"))
 
 loop = True
 while loop == True:
