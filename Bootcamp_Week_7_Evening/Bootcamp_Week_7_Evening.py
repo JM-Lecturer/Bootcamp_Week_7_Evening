@@ -30,6 +30,25 @@ def DisplayVehicles(Vehicles, stock):
             print(" Stock: " + str(Vehicles[i].stock))
         print("")
 
+def AddVehicles(Vehicles):
+    
+    loop = True
+    while loop == True:
+    
+        DisplayVehicles(Vehicles, False)
+
+        MenuItems = list()
+        MenuItems.append("Options:\n")
+        MenuItems.append("Add Item")
+        MenuItems.append("Exit")
+
+        choice = RunMenu(MenuItems)
+
+        if choice == 1:
+            print()
+        else:
+            loop = False
+
 def PurchaseVehicles(Vehicles):
     #Remove any vehicles from the options where the stock is 0
     loop = True
@@ -59,6 +78,7 @@ MenuItems = list()
 MenuItems.append("----------Menu----------\n")
 MenuItems.append("View Stock")
 MenuItems.append("Purchase Items")
+MenuItems.append("Add Items")
 MenuItems.append("Exit")
 
 Vehicles = list()
@@ -77,6 +97,8 @@ while loop == True:
         DisplayVehicles(Vehicles, False)
     elif choice == 2:
         PurchaseVehicles(Vehicles)
+    elif choice == 3:
+        AddVehicles(Vehicles)
     else:
         print("\nGoodbye")
         loop = False
