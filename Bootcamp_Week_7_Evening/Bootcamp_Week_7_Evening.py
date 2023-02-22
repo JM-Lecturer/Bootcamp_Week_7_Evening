@@ -31,7 +31,7 @@ def DisplayVehicles(Vehicles, stock):
         print("")
 
 def PurchaseVehicles(Vehicles):
-    
+    #Remove any vehicles from the options where the stock is 0
     loop = True
     while loop == True:
 
@@ -50,6 +50,8 @@ def PurchaseVehicles(Vehicles):
         if choice == len(MenuItems) - 1:
             loop = False
             print("\n\n")
+        else:
+            Vehicles[choice - 1].stock = Vehicles[choice - 1].stock - 1
 
 #-------------------------------------------------------------------------------------------------------
 
