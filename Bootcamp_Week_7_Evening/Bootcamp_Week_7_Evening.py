@@ -19,6 +19,12 @@ def RunMenu(MenuItems):
     choice = int(input("\nPlease select from the options above\n"))
     return choice
 
+def DisplayVehicles(Vehicles):
+    print("----------Vehicles----------\n")
+
+    for i in range(0, len(Vehicles)):
+        print("Vehicle " + str(i + 1) + "\n Name: " + Vehicles[i].name)
+
 
 MenuItems = list()
 MenuItems.append("----------Menu----------\n")
@@ -39,7 +45,7 @@ while loop == True:
     choice = RunMenu(MenuItems)
 
     if choice == 1:
-        print("View coming soon...")
+        DisplayVehicles(Vehicles)
     elif choice == 2:
         print("Purchasing coming soon...\n")
     else:
