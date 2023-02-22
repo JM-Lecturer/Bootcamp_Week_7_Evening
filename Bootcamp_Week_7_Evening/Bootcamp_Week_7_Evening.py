@@ -1,6 +1,5 @@
 def RunMenu(MenuItems):
     print(MenuItems[0])
-    #ItemsCount = MenuItems.count
 
     for i in range(1, len(MenuItems)):
         print(str(i) + ": " + MenuItems[i])
