@@ -45,7 +45,17 @@ def AddVehicles(Vehicles):
         choice = RunMenu(MenuItems)
 
         if choice == 1:
-            print()
+
+            vName = input("\nPlease enter the Vehicles name:\n")
+            vColour = input("\nPlease enter the Vehicles colour:\n")
+            vWheel = int(input("\nPlease enter the Vehicles wheel count:\n"))
+            vSpeed = int(input("\nPlease enter the Vehicles max speed:\n"))
+            vStock = int(input("\nPlease enter the Vehicles stock:\n"))
+
+            #Add the option for the user to confirm they are happy with their inputs
+
+            Vehicles.append(Vehicle(vColour, vWheel, vSpeed, vName, vStock))
+
         else:
             loop = False
 
