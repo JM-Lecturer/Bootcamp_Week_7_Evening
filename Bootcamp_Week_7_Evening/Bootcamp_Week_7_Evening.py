@@ -30,6 +30,35 @@ def DisplayVehicles(Vehicles, stock):
             print(" Stock: " + str(Vehicles[i].stock))
         print("")
 
+def AddVehicles(Vehicles):
+    
+    loop = True
+    while loop == True:
+    
+        DisplayVehicles(Vehicles, False)
+
+        MenuItems = list()
+        MenuItems.append("Options:\n")
+        MenuItems.append("Add Item")
+        MenuItems.append("Exit")
+
+        choice = RunMenu(MenuItems)
+
+        if choice == 1:
+
+            vName = input("\nPlease enter the Vehicles name:\n")
+            vColour = input("\nPlease enter the Vehicles colour:\n")
+            vWheel = int(input("\nPlease enter the Vehicles wheel count:\n"))
+            vSpeed = int(input("\nPlease enter the Vehicles max speed:\n"))
+            vStock = int(input("\nPlease enter the Vehicles stock:\n"))
+
+            #Add the option for the user to confirm they are happy with their inputs
+
+            Vehicles.append(Vehicle(vColour, vWheel, vSpeed, vName, vStock))
+
+        else:
+            loop = False
+
 def PurchaseVehicles(Vehicles):
     #Remove any vehicles from the options where the stock is 0
     loop = True
@@ -59,6 +88,7 @@ MenuItems = list()
 MenuItems.append("----------Menu----------\n")
 MenuItems.append("View Stock")
 MenuItems.append("Purchase Items")
+MenuItems.append("Add Items")
 MenuItems.append("Exit")
 
 Vehicles = list()
@@ -77,6 +107,8 @@ while loop == True:
         DisplayVehicles(Vehicles, False)
     elif choice == 2:
         PurchaseVehicles(Vehicles)
+    elif choice == 3:
+        AddVehicles(Vehicles)
     else:
         print("\nGoodbye")
         loop = False
